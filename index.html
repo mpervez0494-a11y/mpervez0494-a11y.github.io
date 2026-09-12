@@ -2,288 +2,277 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>MP Tools - Free Online Tools</title>
 <meta name="description" content="MP Tools - Free online image, PDF, calculator, QR and text tools.">
 <meta name="google-adsense-account" content="ca-pub-4849304684017559">
 
-<!-- QR CODE LIBRARY -->
+<!-- QR CODE -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-<!-- PDF.JS LIBRARY -->
+<!-- PDF JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
 <style>
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+ box-sizing:border-box;
+ margin:0;
+ padding:0;
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#f4f7fb;
-    color:#172033;
+ font-family:Arial,sans-serif;
+ background:#f4f7fb;
+ color:#172033;
 }
 
 header{
-    background:linear-gradient(135deg,#075e54,#128c7e);
-    color:white;
-    padding:22px 15px;
-    text-align:center;
+ background:linear-gradient(135deg,#075e54,#128c7e);
+ color:#fff;
+ padding:25px 15px;
+ text-align:center;
 }
 
 header h1{
-    font-size:30px;
-    margin-bottom:7px;
+ font-size:30px;
+ margin-bottom:7px;
 }
 
 header p{
-    font-size:15px;
+ font-size:15px;
 }
 
 .ad{
-    background:white;
-    margin:12px auto;
-    padding:8px;
-    max-width:100%;
-    text-align:center;
-    overflow:hidden;
-    min-height:60px;
+ background:#fff;
+ margin:12px auto;
+ padding:8px;
+ max-width:100%;
+ text-align:center;
+ overflow:hidden;
+ min-height:60px;
 }
 
 .container{
-    width:94%;
-    max-width:1100px;
-    margin:auto;
+ width:94%;
+ max-width:1100px;
+ margin:auto;
 }
 
+/* HOME */
 .tools-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-    gap:15px;
-    margin:20px 0;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+ gap:15px;
+ margin:20px 0;
 }
 
 .tool-card{
-    background:white;
-    border-radius:15px;
-    padding:22px 15px;
-    text-align:center;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-    transition:.2s;
-}
-
-.tool-card:hover{
-    transform:translateY(-3px);
+ background:#fff;
+ border-radius:15px;
+ padding:22px 15px;
+ text-align:center;
+ box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 .tool-card .icon{
-    font-size:38px;
-    margin-bottom:10px;
+ font-size:38px;
+ margin-bottom:10px;
 }
 
 .tool-card h3{
-    margin-bottom:8px;
-    font-size:18px;
+ margin-bottom:8px;
+ font-size:18px;
 }
 
 .tool-card p{
-    color:#687386;
-    font-size:13px;
-    min-height:38px;
-    margin-bottom:15px;
+ color:#687386;
+ font-size:13px;
+ min-height:38px;
+ margin-bottom:15px;
 }
 
+.open-btn,
 button,
 .download-btn{
-    border:0;
-    background:#075e54;
-    color:white;
-    padding:12px 18px;
-    border-radius:9px;
-    cursor:pointer;
-    font-size:15px;
-    text-decoration:none;
-    display:inline-block;
+ border:0;
+ background:#075e54;
+ color:#fff;
+ padding:12px 18px;
+ border-radius:9px;
+ cursor:pointer;
+ font-size:15px;
+ text-decoration:none;
+ display:inline-block;
 }
 
+.open-btn:hover,
 button:hover,
 .download-btn:hover{
-    background:#064c44;
+ background:#064c44;
 }
 
+/* TOOLS */
 .tool-page{
-    display:none;
-    background:white;
-    margin:20px auto;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 4px 18px rgba(0,0,0,.08);
-    max-width:850px;
+ display:none;
+ background:#fff;
+ margin:20px auto;
+ padding:25px;
+ border-radius:15px;
+ box-shadow:0 4px 18px rgba(0,0,0,.08);
+ max-width:850px;
 }
 
-.tool-page.active{
-    display:block;
+.tool-page:target{
+ display:block;
 }
 
 .tool-page h2{
-    text-align:center;
-    margin-bottom:20px;
+ text-align:center;
+ margin-bottom:20px;
 }
 
 .back-btn{
-    background:#555;
-    margin-bottom:20px;
+ background:#555;
+ margin-bottom:20px;
 }
 
 input,
 textarea,
 select{
-    width:100%;
-    padding:13px;
-    border:1px solid #ccd3dd;
-    border-radius:8px;
-    margin:7px 0 13px;
-    font-size:16px;
+ width:100%;
+ padding:13px;
+ border:1px solid #ccd3dd;
+ border-radius:8px;
+ margin:7px 0 13px;
+ font-size:16px;
 }
 
 textarea{
-    min-height:180px;
-    resize:vertical;
+ min-height:180px;
+ resize:vertical;
 }
 
 label{
-    font-weight:bold;
-    display:block;
-    margin-top:5px;
+ font-weight:bold;
+ display:block;
+ margin-top:5px;
 }
 
 .result{
-    margin-top:18px;
-    padding:15px;
-    background:#eef8f6;
-    border-radius:10px;
-    font-size:17px;
+ margin-top:18px;
+ padding:15px;
+ background:#eef8f6;
+ border-radius:10px;
+ font-size:17px;
 }
 
 .file-box{
-    border:2px dashed #9aa6b5;
-    padding:25px;
-    border-radius:12px;
-    text-align:center;
-    margin-bottom:15px;
-}
-
-.preview{
-    max-width:100%;
-    margin:15px auto;
-    display:block;
-    border-radius:8px;
+ border:2px dashed #9aa6b5;
+ padding:25px;
+ border-radius:12px;
+ text-align:center;
+ margin-bottom:15px;
 }
 
 .qr-box{
-    text-align:center;
-    margin:20px 0;
+ text-align:center;
+ margin:20px 0;
 }
 
 #qrCode canvas,
 #qrCode img{
-    margin:auto;
-}
-
-.pdf-result{
-    margin-top:20px;
+ margin:auto;
 }
 
 .pdf-page{
-    border:1px solid #ddd;
-    padding:10px;
-    margin:15px 0;
-    border-radius:10px;
-    text-align:center;
+ border:1px solid #ddd;
+ padding:10px;
+ margin:15px 0;
+ border-radius:10px;
+ text-align:center;
 }
 
 .pdf-page img{
-    max-width:100%;
-    display:block;
-    margin:10px auto;
+ max-width:100%;
+ display:block;
+ margin:10px auto;
 }
 
 .stats{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-    margin-top:15px;
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:10px;
+ margin-top:15px;
 }
 
 .stat{
-    background:#f1f4f8;
-    padding:15px;
-    border-radius:10px;
-    text-align:center;
+ background:#f1f4f8;
+ padding:15px;
+ border-radius:10px;
+ text-align:center;
 }
 
 .stat strong{
-    display:block;
-    font-size:24px;
-    margin-top:5px;
+ display:block;
+ font-size:24px;
+ margin-top:5px;
 }
 
 footer{
-    margin-top:30px;
-    background:#172033;
-    color:white;
-    padding:25px 15px;
-    text-align:center;
+ margin-top:30px;
+ background:#172033;
+ color:#fff;
+ padding:25px 15px;
+ text-align:center;
 }
 
 footer p{
-    margin:7px;
-    font-size:14px;
+ margin:7px;
+ font-size:14px;
 }
 
 @media(max-width:600px){
-    header h1{
-        font-size:25px;
-    }
+ header h1{
+  font-size:25px;
+ }
 
-    .tools-grid{
-        grid-template-columns:1fr 1fr;
-        gap:10px;
-    }
+ .tools-grid{
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+ }
 
-    .tool-card{
-        padding:16px 9px;
-    }
+ .tool-card{
+  padding:16px 9px;
+ }
 
-    .tool-card .icon{
-        font-size:30px;
-    }
+ .tool-card .icon{
+  font-size:30px;
+ }
 
-    .tool-card h3{
-        font-size:15px;
-    }
+ .tool-card h3{
+  font-size:15px;
+ }
 
-    .tool-card p{
-        font-size:12px;
-    }
+ .tool-card p{
+  font-size:12px;
+ }
 
-    button{
-        padding:10px 12px;
-        font-size:13px;
-    }
+ .open-btn,
+ button{
+  padding:10px 12px;
+  font-size:13px;
+ }
 
-    .tool-page{
-        padding:17px;
-    }
+ .tool-page{
+  padding:17px;
+ }
 }
 
 @media(max-width:380px){
-    .tools-grid{
-        grid-template-columns:1fr;
-    }
+ .tools-grid{
+  grid-template-columns:1fr;
+ }
 }
 </style>
 </head>
@@ -291,8 +280,8 @@ footer p{
 <body>
 
 <header>
-    <h1>MP Tools</h1>
-    <p>Free Online Tools - Fast, Simple & Easy</p>
+<h1>MP Tools</h1>
+<p>Free Online Tools - Fast, Simple & Easy</p>
 </header>
 
 
@@ -329,102 +318,92 @@ src="https://pl31301604.profitableratecpmnetwork.com/7ae34b3ce721af2ebfa993a387e
 
 <div class="container">
 
+
 <!-- ================= HOME ================= -->
 
 <div id="homePage">
 
 <div class="tools-grid">
 
-<!-- 1 -->
 <div class="tool-card">
 <div class="icon">🖼️</div>
 <h3>Image Compressor</h3>
-<p>Compress your image and reduce file size.</p>
-<button onclick="showTool('compressor')">Open Tool</button>
+<p>Compress image and reduce file size.</p>
+<a class="open-btn" href="#compressor">Open Tool</a>
 </div>
 
-<!-- 2 -->
 <div class="tool-card">
 <div class="icon">📐</div>
 <h3>Image Resizer</h3>
-<p>Resize an image to your required dimensions.</p>
-<button onclick="showTool('resizer')">Open Tool</button>
+<p>Resize image to your required dimensions.</p>
+<a class="open-btn" href="#resizer">Open Tool</a>
 </div>
 
-<!-- 3 -->
 <div class="tool-card">
 <div class="icon">🔄</div>
 <h3>JPG to PNG</h3>
-<p>Convert JPG images into PNG format.</p>
-<button onclick="showTool('jpgpng')">Open Tool</button>
+<p>Convert JPG image into PNG format.</p>
+<a class="open-btn" href="#jpgpng">Open Tool</a>
 </div>
 
-<!-- 4 -->
 <div class="tool-card">
 <div class="icon">🔄</div>
 <h3>PNG to JPG</h3>
-<p>Convert PNG images into JPG format.</p>
-<button onclick="showTool('pngjpg')">Open Tool</button>
+<p>Convert PNG image into JPG format.</p>
+<a class="open-btn" href="#pngjpg">Open Tool</a>
 </div>
 
-<!-- 5 -->
 <div class="tool-card">
 <div class="icon">📄</div>
 <h3>PDF to JPG</h3>
 <p>Convert PDF pages into JPG images.</p>
-<button onclick="showTool('pdfjpg')">Open Tool</button>
+<a class="open-btn" href="#pdfjpg">Open Tool</a>
 </div>
 
-<!-- 6 -->
 <div class="tool-card">
 <div class="icon">🎂</div>
 <h3>Age Calculator</h3>
 <p>Calculate your exact age.</p>
-<button onclick="showTool('age')">Open Tool</button>
+<a class="open-btn" href="#age">Open Tool</a>
 </div>
 
-<!-- 7 -->
 <div class="tool-card">
 <div class="icon">📊</div>
 <h3>Percentage Calculator</h3>
 <p>Calculate percentage quickly.</p>
-<button onclick="showTool('percentage')">Open Tool</button>
+<a class="open-btn" href="#percentage">Open Tool</a>
 </div>
 
-<!-- 8 -->
 <div class="tool-card">
 <div class="icon">💰</div>
 <h3>EMI Calculator</h3>
 <p>Calculate monthly loan EMI.</p>
-<button onclick="showTool('emi')">Open Tool</button>
+<a class="open-btn" href="#emi">Open Tool</a>
 </div>
 
-<!-- 9 -->
 <div class="tool-card">
 <div class="icon">🔳</div>
 <h3>QR Code Generator</h3>
-<p>Create a QR code from text or link.</p>
-<button onclick="showTool('qr')">Open Tool</button>
+<p>Create QR from text or website link.</p>
+<a class="open-btn" href="#qr">Open Tool</a>
 </div>
 
-<!-- 10 -->
 <div class="tool-card">
 <div class="icon">📝</div>
 <h3>Word & Character Counter</h3>
 <p>Count words, characters and lines.</p>
-<button onclick="showTool('counter')">Open Tool</button>
+<a class="open-btn" href="#counter">Open Tool</a>
 </div>
 
 </div>
-
 </div>
 
 
-<!-- ================= TOOL 1 ================= -->
+<!-- ================= 1 IMAGE COMPRESSOR ================= -->
 
 <div id="compressor" class="tool-page">
 
-<button class="back-btn" onclick="goHome()">← Back</button>
+<a href="#homePage" class="open-btn back-btn">← Back</a>
 
 <h2>🖼️ Image Compressor</h2>
 
@@ -432,7 +411,8 @@ src="https://pl31301604.profitableratecpmnetwork.com/7ae34b3ce721af2ebfa993a387e
 <input type="file" id="compressFile" accept="image/*">
 </div>
 
-<label>Quality</label>
+<label>Compression Quality</label>
+
 <select id="compressQuality">
 <option value="0.9">High Quality</option>
 <option value="0.75" selected>Good Quality</option>
@@ -440,18 +420,18 @@ src="https://pl31301604.profitableratecpmnetwork.com/7ae34b3ce721af2ebfa993a387e
 <option value="0.4">Low Size</option>
 </select>
 
-<button onclick="compressImage()">Compress Image</button>
+<button type="button" id="compressBtn">Compress Image</button>
 
 <div id="compressResult" class="result"></div>
 
 </div>
 
 
-<!-- ================= TOOL 2 ================= -->
+<!-- ================= 2 IMAGE RESIZER ================= -->
 
 <div id="resizer" class="tool-page">
 
-<button class="back-btn" onclick="goHome()">← Back</button>
+<a href="#homePage" class="open-btn back-btn">← Back</a>
 
 <h2>📐 Image Resizer</h2>
 
@@ -465,18 +445,18 @@ src="https://pl31301604.profitableratecpmnetwork.com/7ae34b3ce721af2ebfa993a387e
 <label>Height (px)</label>
 <input type="number" id="resizeHeight" placeholder="Example: 600">
 
-<button onclick="resizeImage()">Resize Image</button>
+<button type="button" id="resizeBtn">Resize Image</button>
 
 <div id="resizeResult" class="result"></div>
 
 </div>
 
 
-<!-- ================= TOOL 3 ================= -->
+<!-- ================= 3 JPG TO PNG ================= -->
 
 <div id="jpgpng" class="tool-page">
 
-<button class="back-btn" onclick="goHome()">← Back</button>
+<a href="#homePage" class="open-btn back-btn">← Back</a>
 
 <h2>🔄 JPG to PNG Converter</h2>
 
@@ -484,18 +464,18 @@ src="https://pl31301604.profitableratecpmnetwork.com/7ae34b3ce721af2ebfa993a387e
 <input type="file" id="jpgFile" accept="image/jpeg,image/jpg">
 </div>
 
-<button onclick="convertJpgPng()">Convert to PNG</button>
+<button type="button" id="jpgpngBtn">Convert to PNG</button>
 
 <div id="jpgpngResult" class="result"></div>
 
 </div>
 
 
-<!-- ================= TOOL 4 ================= -->
+<!-- ================= 4 PNG TO JPG ================= -->
 
 <div id="pngjpg" class="tool-page">
 
-<button class="back-btn" onclick="goHome()">← Back</button>
+<a href="#homePage" class="open-btn back-btn">← Back</a>
 
 <h2>🔄 PNG to JPG Converter</h2>
 
@@ -503,65 +483,65 @@ src="https://pl31301604.profitableratecpmnetwork.com/7ae34b3ce721af2ebfa993a387e
 <input type="file" id="pngFile" accept="image/png">
 </div>
 
-<button onclick="convertPngJpg()">Convert to JPG</button>
+<button type="button" id="pngjpgBtn">Convert to JPG</button>
 
 <div id="pngjpgResult" class="result"></div>
 
 </div>
 
 
-<!-- ================= TOOL 5 ================= -->
+<!-- ================= 5 PDF TO JPG ================= -->
 
 <div id="pdfjpg" class="tool-page">
 
-<button class="back-btn" onclick="goHome()">← Back</button>
+<a href="#homePage" class="open-btn back-btn">← Back</a>
 
 <h2>📄 PDF to JPG Converter</h2>
 
 <div class="file-box">
-<input type="file" id="pdfFile" accept="application/pdf">
+<input type="file" id="pdfFile" accept="application/pdf,.pdf">
 </div>
 
-<button onclick="convertPdfJpg()">Convert PDF to JPG</button>
+<button type="button" id="pdfjpgBtn">Convert PDF to JPG</button>
 
-<div id="pdfResult" class="pdf-result"></div>
+<div id="pdfResult"></div>
 
 </div>
 
 
-<!-- ================= TOOL 6 ================= -->
+<!-- ================= 6 AGE ================= -->
 
 <div id="age" class="tool-page">
 
-<button class="back-btn" onclick="goHome()">← Back</button>
+<a href="#homePage" class="open-btn back-btn">← Back</a>
 
 <h2>🎂 Age Calculator</h2>
 
 <label>Date of Birth</label>
 <input type="date" id="birthDate">
 
-<button onclick="calculateAge()">Calculate Age</button>
+<button type="button" id="ageBtn">Calculate Age</button>
 
 <div id="ageResult" class="result"></div>
 
 </div>
 
 
-<!-- ================= TOOL 7 ================= -->
+<!-- ================= 7 PERCENTAGE ================= -->
 
 <div id="percentage" class="tool-page">
 
-<button class="back-btn" onclick="goHome()">← Back</button>
+<a href="#homePage" class="open-btn back-btn">← Back</a>
 
 <h2>📊 Percentage Calculator</h2>
 
-<label>What is the percentage of?</label>
+<label>Your Value</label>
 <input type="number" id="percentValue" placeholder="Example: 450">
 
-<label>Total</label>
+<label>Total Value</label>
 <input type="number" id="percentTotal" placeholder="Example: 500">
 
-<button onclick="calculatePercentage()">Calculate Percentage</button>
+<button type="button" id="percentageBtn">Calculate Percentage</button>
 
 <div id="percentageResult" class="result"></div>
 
@@ -575,18 +555,18 @@ src="https://pl31301604.profitableratecpmnetwork.com/7ae34b3ce721af2ebfa993a387e
 <label>Number</label>
 <input type="number" id="findNumberValue" placeholder="Example: 500">
 
-<button onclick="findPercent()">Calculate</button>
+<button type="button" id="findPercentBtn">Calculate</button>
 
 <div id="findPercentResult" class="result"></div>
 
 </div>
 
 
-<!-- ================= TOOL 8 ================= -->
+<!-- ================= 8 EMI ================= -->
 
 <div id="emi" class="tool-page">
 
-<button class="back-btn" onclick="goHome()">← Back</button>
+<a href="#homePage" class="open-btn back-btn">← Back</a>
 
 <h2>💰 EMI Calculator</h2>
 
@@ -599,18 +579,18 @@ src="https://pl31301604.profitableratecpmnetwork.com/7ae34b3ce721af2ebfa993a387e
 <label>Loan Period (Years)</label>
 <input type="number" id="loanYears" placeholder="Example: 5">
 
-<button onclick="calculateEMI()">Calculate EMI</button>
+<button type="button" id="emiBtn">Calculate EMI</button>
 
 <div id="emiResult" class="result"></div>
 
 </div>
 
 
-<!-- ================= TOOL 9 ================= -->
+<!-- ================= 9 QR ================= -->
 
 <div id="qr" class="tool-page">
 
-<button class="back-btn" onclick="goHome()">← Back</button>
+<a href="#homePage" class="open-btn back-btn">← Back</a>
 
 <h2>🔳 QR Code Generator</h2>
 
@@ -618,26 +598,25 @@ src="https://pl31301604.profitableratecpmnetwork.com/7ae34b3ce721af2ebfa993a387e
 
 <textarea id="qrText" placeholder="https://example.com"></textarea>
 
-<button onclick="generateQR()">Generate QR Code</button>
+<button type="button" id="qrBtn">Generate QR Code</button>
 
 <div id="qrCode" class="qr-box"></div>
 
-<div id="qrDownload"></div>
+<div id="qrDownload" style="text-align:center"></div>
 
 </div>
 
 
-<!-- ================= TOOL 10 ================= -->
+<!-- ================= 10 COUNTER ================= -->
 
 <div id="counter" class="tool-page">
 
-<button class="back-btn" onclick="goHome()">← Back</button>
+<a href="#homePage" class="open-btn back-btn">← Back</a>
 
 <h2>📝 Word & Character Counter</h2>
 
 <textarea id="counterText"
-placeholder="Type or paste your text here..."
-oninput="countText()"></textarea>
+placeholder="Type or paste your text here..."></textarea>
 
 <div class="stats">
 
@@ -698,18 +677,21 @@ atOptions={
 
 <!-- ================= COUNTER ================= -->
 
-<div style="text-align:center;margin:15px 0;">
+<div style="text-align:center;margin:15px 0">
 
-<a href='https://counter.gratis/?language=en&ID=f0c8ee03' target='_top'>
+<a href="https://counter.gratis/?language=en&ID=f0c8ee03"
+target="_top">
 
-<img src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=='
-id='cg_f0c8ee03'
-alt='Free Counter'
-title='Counter Statistics'>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+id="cg_f0c8ee03"
+alt="Free Counter"
+title="Counter Statistics">
 
 <noscript>
-<img src='https://besucherzaehler.gratis/counter.php?ID=f0c8ee03&STYLE=183'
-alt='Free Counter'>
+<img
+src="https://besucherzaehler.gratis/counter.php?ID=f0c8ee03&STYLE=183"
+alt="Free Counter">
 </noscript>
 
 </a>
@@ -725,281 +707,644 @@ i.src=c+
 })(
 document.getElementById('cg_f0c8ee03'),
 'https://besucherzaehler.gratis/counter.php?ID=f0c8ee03&STYLE=183'
-)
+);
 </script>
 
 </div>
 
 
 <footer>
-
 <p><strong>MP Tools</strong></p>
 <p>Free Online Tools for Everyone</p>
 <p>© 2026 MP Tools. All Rights Reserved.</p>
-
 </footer>
 
 
 <script>
 
-/* =====================================================
-   BASIC NAVIGATION
-===================================================== */
+/* ==========================================
+   PDF WORKER
+========================================== */
 
-function showTool(id){
-
-    document.getElementById("homePage").style.display="none";
-
-    document.querySelectorAll(".tool-page").forEach(function(page){
-        page.classList.remove("active");
-    });
-
-    var selected=document.getElementById(id);
-
-    if(selected){
-        selected.classList.add("active");
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-    }
-}
-
-function goHome(){
-
-    document.querySelectorAll(".tool-page").forEach(function(page){
-        page.classList.remove("active");
-    });
-
-    document.getElementById("homePage").style.display="block";
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+if(typeof pdfjsLib !== "undefined"){
+ pdfjsLib.GlobalWorkerOptions.workerSrc =
+ "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 }
 
 
-/* =====================================================
+/* ==========================================
    IMAGE COMPRESSOR
-===================================================== */
+========================================== */
 
-function compressImage(){
+document.getElementById("compressBtn").addEventListener("click",function(){
 
-    var file=document.getElementById("compressFile").files[0];
-    var result=document.getElementById("compressResult");
+ const file=document.getElementById("compressFile").files[0];
+ const result=document.getElementById("compressResult");
+ const quality=parseFloat(document.getElementById("compressQuality").value);
 
-    if(!file){
-        result.innerHTML="❌ Please select an image first.";
-        return;
+ if(!file){
+  result.innerHTML="❌ Please select an image first.";
+  return;
+ }
+
+ const reader=new FileReader();
+
+ reader.onload=function(e){
+
+  const img=new Image();
+
+  img.onload=function(){
+
+   const canvas=document.createElement("canvas");
+   canvas.width=img.width;
+   canvas.height=img.height;
+
+   const ctx=canvas.getContext("2d");
+   ctx.drawImage(img,0,0);
+
+   canvas.toBlob(function(blob){
+
+    if(!blob){
+     result.innerHTML="❌ Compression failed.";
+     return;
     }
 
-    if(!file.type.startsWith("image/")){
-        result.innerHTML="❌ Please select a valid image.";
-        return;
-    }
+    const oldSize=(file.size/1024).toFixed(2);
+    const newSize=(blob.size/1024).toFixed(2);
+    const url=URL.createObjectURL(blob);
 
-    var quality=parseFloat(
-        document.getElementById("compressQuality").value
-    );
+    result.innerHTML=
+    "Original Size: <b>"+oldSize+" KB</b><br>"+
+    "Compressed Size: <b>"+newSize+" KB</b><br><br>"+
+    "<a class='download-btn' href='"+url+"' download='compressed-image.jpg'>Download Compressed Image</a>";
 
-    var reader=new FileReader();
+   },"image/jpeg",quality);
 
-    reader.onload=function(e){
+  };
 
-        var img=new Image();
+  img.src=e.target.result;
+ };
 
-        img.onload=function(){
+ reader.readAsDataURL(file);
 
-            var canvas=document.createElement("canvas");
-            var ctx=canvas.getContext("2d");
-
-            canvas.width=img.width;
-            canvas.height=img.height;
-
-            ctx.drawImage(img,0,0);
-
-            canvas.toBlob(function(blob){
-
-                if(!blob){
-                    result.innerHTML="❌ Compression failed.";
-                    return;
-                }
-
-                var oldSize=(file.size/1024).toFixed(2);
-                var newSize=(blob.size/1024).toFixed(2);
-
-                var url=URL.createObjectURL(blob);
-
-                result.innerHTML=
-                "Original Size: <b>"+oldSize+" KB</b><br>"+
-                "Compressed Size: <b>"+newSize+" KB</b><br><br>"+
-                "<a class='download-btn' href='"+url+"' download='compressed-image.jpg'>Download Compressed Image</a>";
-
-            },"image/jpeg",quality);
-
-        };
-
-        img.src=e.target.result;
-
-    };
-
-    reader.readAsDataURL(file);
-}
+});
 
 
-/* =====================================================
+/* ==========================================
    IMAGE RESIZER
-===================================================== */
+========================================== */
 
-function resizeImage(){
+document.getElementById("resizeBtn").addEventListener("click",function(){
 
-    var file=document.getElementById("resizeFile").files[0];
-    var width=parseInt(document.getElementById("resizeWidth").value);
-    var height=parseInt(document.getElementById("resizeHeight").value);
-    var result=document.getElementById("resizeResult");
+ const file=document.getElementById("resizeFile").files[0];
+ const width=parseInt(document.getElementById("resizeWidth").value);
+ const height=parseInt(document.getElementById("resizeHeight").value);
+ const result=document.getElementById("resizeResult");
 
-    if(!file){
-        result.innerHTML="❌ Please select an image.";
-        return;
-    }
+ if(!file){
+  result.innerHTML="❌ Please select an image.";
+  return;
+ }
 
-    if(!width || !height || width<=0 || height<=0){
-        result.innerHTML="❌ Please enter valid width and height.";
-        return;
-    }
+ if(!width || !height || width<=0 || height<=0){
+  result.innerHTML="❌ Please enter valid width and height.";
+  return;
+ }
 
-    var reader=new FileReader();
+ const reader=new FileReader();
 
-    reader.onload=function(e){
+ reader.onload=function(e){
 
-        var img=new Image();
+  const img=new Image();
 
-        img.onload=function(){
+  img.onload=function(){
 
-            var canvas=document.createElement("canvas");
+   const canvas=document.createElement("canvas");
 
-            canvas.width=width;
-            canvas.height=height;
+   canvas.width=width;
+   canvas.height=height;
 
-            var ctx=canvas.getContext("2d");
+   const ctx=canvas.getContext("2d");
 
-            ctx.drawImage(
-                img,
-                0,
-                0,
-                width,
-                height
-            );
+   ctx.drawImage(img,0,0,width,height);
 
-            canvas.toBlob(function(blob){
+   canvas.toBlob(function(blob){
 
-                var url=URL.createObjectURL(blob);
+    const url=URL.createObjectURL(blob);
 
-                result.innerHTML=
-                "<b>Image resized successfully.</b><br><br>"+
-                "<a class='download-btn' href='"+url+"' download='resized-image.jpg'>Download Resized Image</a>";
+    result.innerHTML=
+    "✅ Image resized successfully.<br><br>"+
+    "<a class='download-btn' href='"+url+"' download='resized-image.jpg'>Download Resized Image</a>";
 
-            },"image/jpeg",0.92);
+   },"image/jpeg",0.92);
 
-        };
+  };
 
-        img.src=e.target.result;
+  img.src=e.target.result;
+ };
 
-    };
+ reader.readAsDataURL(file);
 
-    reader.readAsDataURL(file);
-}
+});
 
 
-/* =====================================================
+/* ==========================================
    JPG TO PNG
-===================================================== */
+========================================== */
 
-function convertJpgPng(){
+document.getElementById("jpgpngBtn").addEventListener("click",function(){
 
-    var file=document.getElementById("jpgFile").files[0];
-    var result=document.getElementById("jpgpngResult");
+ const file=document.getElementById("jpgFile").files[0];
+ const result=document.getElementById("jpgpngResult");
 
-    if(!file){
-        result.innerHTML="❌ Please select a JPG image.";
-        return;
-    }
+ if(!file){
+  result.innerHTML="❌ Please select a JPG image.";
+  return;
+ }
 
-    var reader=new FileReader();
+ const reader=new FileReader();
 
-    reader.onload=function(e){
+ reader.onload=function(e){
 
-        var img=new Image();
+  const img=new Image();
 
-        img.onload=function(){
+  img.onload=function(){
 
-            var canvas=document.createElement("canvas");
+   const canvas=document.createElement("canvas");
 
-            canvas.width=img.width;
-            canvas.height=img.height;
+   canvas.width=img.width;
+   canvas.height=img.height;
 
-            var ctx=canvas.getContext("2d");
+   const ctx=canvas.getContext("2d");
 
-            ctx.drawImage(img,0,0);
+   ctx.drawImage(img,0,0);
 
-            canvas.toBlob(function(blob){
+   canvas.toBlob(function(blob){
 
-                var url=URL.createObjectURL(blob);
+    const url=URL.createObjectURL(blob);
 
-                result.innerHTML=
-                "✅ JPG successfully converted to PNG.<br><br>"+
-                "<a class='download-btn' href='"+url+"' download='converted.png'>Download PNG</a>";
+    result.innerHTML=
+    "✅ JPG successfully converted to PNG.<br><br>"+
+    "<a class='download-btn' href='"+url+"' download='converted.png'>Download PNG</a>";
 
-            },"image/png");
+   },"image/png");
 
-        };
+  };
 
-        img.src=e.target.result;
+  img.src=e.target.result;
+ };
 
-    };
+ reader.readAsDataURL(file);
 
-    reader.readAsDataURL(file);
-}
+});
 
 
-/* =====================================================
+/* ==========================================
    PNG TO JPG
-===================================================== */
+========================================== */
 
-function convertPngJpg(){
+document.getElementById("pngjpgBtn").addEventListener("click",function(){
 
-    var file=document.getElementById("pngFile").files[0];
-    var result=document.getElementById("pngjpgResult");
+ const file=document.getElementById("pngFile").files[0];
+ const result=document.getElementById("pngjpgResult");
 
-    if(!file){
-        result.innerHTML="❌ Please select a PNG image.";
-        return;
-    }
+ if(!file){
+  result.innerHTML="❌ Please select a PNG image.";
+  return;
+ }
 
-    var reader=new FileReader();
+ const reader=new FileReader();
 
-    reader.onload=function(e){
+ reader.onload=function(e){
 
-        var img=new Image();
+  const img=new Image();
 
-        img.onload=function(){
+  img.onload=function(){
 
-            var canvas=document.createElement("canvas");
+   const canvas=document.createElement("canvas");
 
-            canvas.width=img.width;
-            canvas.height=img.height;
+   canvas.width=img.width;
+   canvas.height=img.height;
 
-            var ctx=canvas.getContext("2d");
+   const ctx=canvas.getContext("2d");
 
-            /* White background for transparent PNG */
+   ctx.fillStyle="#ffffff";
+   ctx.fillRect(0,0,canvas.width,canvas.height);
 
-            ctx.fillStyle="#ffffff";
-            ctx.fillRect(
-                0,
-                0,
-                canvas.width,
-                canvas.height
-            );
+   ctx.drawImage(img,0,0);
 
-            ctx.draw
+   canvas.toBlob(function(blob){
+
+    const url=URL.createObjectURL(blob);
+
+    result.innerHTML=
+    "✅ PNG successfully converted to JPG.<br><br>"+
+    "<a class='download-btn' href='"+url+"' download='converted.jpg'>Download JPG</a>";
+
+   },"image/jpeg",0.92);
+
+  };
+
+  img.src=e.target.result;
+ };
+
+ reader.readAsDataURL(file);
+
+});
+
+
+/* ==========================================
+   PDF TO JPG
+========================================== */
+
+document.getElementById("pdfjpgBtn").addEventListener("click",async function(){
+
+ const file=document.getElementById("pdfFile").files[0];
+ const result=document.getElementById("pdfResult");
+
+ if(!file){
+  result.innerHTML="❌ Please select a PDF file.";
+  return;
+ }
+
+ if(typeof pdfjsLib==="undefined"){
+  result.innerHTML="❌ PDF library failed to load. Check internet connection.";
+  return;
+ }
+
+ result.innerHTML="⏳ Reading PDF... Please wait.";
+
+ try{
+
+  const data=await file.arrayBuffer();
+
+  const pdf=await pdfjsLib.getDocument({
+   data:data
+  }).promise;
+
+  result.innerHTML=
+  "<p>✅ PDF has "+pdf.numPages+" page(s).</p>";
+
+  for(let pageNumber=1;pageNumber<=pdf.numPages;pageNumber++){
+
+   const page=await pdf.getPage(pageNumber);
+
+   const viewport=page.getViewport({
+    scale:2
+   });
+
+   const canvas=document.createElement("canvas");
+
+   canvas.width=viewport.width;
+   canvas.height=viewport.height;
+
+   const ctx=canvas.getContext("2d");
+
+   await page.render({
+    canvasContext:ctx,
+    viewport:viewport
+   }).promise;
+
+   const blob=await new Promise(function(resolve){
+    canvas.toBlob(resolve,"image/jpeg",0.92);
+   });
+
+   if(!blob) continue;
+
+   const url=URL.createObjectURL(blob);
+
+   const box=document.createElement("div");
+   box.className="pdf-page";
+
+   const title=document.createElement("p");
+   title.innerHTML="<b>PDF Page "+pageNumber+"</b>";
+
+   const img=document.createElement("img");
+   img.src=url;
+
+   const download=document.createElement("a");
+   download.className="download-btn";
+   download.href=url;
+   download.download="pdf-page-"+pageNumber+".jpg";
+   download.textContent="Download JPG";
+
+   box.appendChild(title);
+   box.appendChild(img);
+   box.appendChild(download);
+
+   result.appendChild(box);
+  }
+
+ }catch(error){
+
+  console.error(error);
+
+  result.innerHTML=
+  "❌ PDF conversion failed. Please select a valid PDF file.";
+
+ }
+
+});
+
+
+/* ==========================================
+   AGE CALCULATOR
+========================================== */
+
+document.getElementById("ageBtn").addEventListener("click",function(){
+
+ const input=document.getElementById("birthDate").value;
+ const result=document.getElementById("ageResult");
+
+ if(!input){
+  result.innerHTML="❌ Please select your date of birth.";
+  return;
+ }
+
+ const birth=new Date(input+"T00:00:00");
+ const today=new Date();
+
+ if(birth>today){
+  result.innerHTML="❌ Date of birth cannot be in the future.";
+  return;
+ }
+
+ let years=today.getFullYear()-birth.getFullYear();
+ let months=today.getMonth()-birth.getMonth();
+ let days=today.getDate()-birth.getDate();
+
+ if(days<0){
+
+  months--;
+
+  const previousMonth=new Date(
+   today.getFullYear(),
+   today.getMonth(),
+   0
+  );
+
+  days+=previousMonth.getDate();
+ }
+
+ if(months<0){
+
+  years--;
+  months+=12;
+
+ }
+
+ const totalDays=Math.floor(
+  (today-birth)/(1000*60*60*24)
+ );
+
+ result.innerHTML=
+ "Your Age:<br><br>"+
+ "<b>"+years+" Years, "+
+ months+" Months, "+
+ days+" Days</b><br><br>"+
+ "Total Days: <b>"+
+ totalDays.toLocaleString()+
+ "</b>";
+
+});
+
+
+/* ==========================================
+   PERCENTAGE
+========================================== */
+
+document.getElementById("percentageBtn").addEventListener("click",function(){
+
+ const value=parseFloat(
+  document.getElementById("percentValue").value
+ );
+
+ const total=parseFloat(
+  document.getElementById("percentTotal").value
+ );
+
+ const result=document.getElementById("percentageResult");
+
+ if(isNaN(value)||isNaN(total)||total===0){
+
+  result.innerHTML="❌ Please enter valid numbers.";
+  return;
+ }
+
+ const percentage=(value/total)*100;
+
+ result.innerHTML=
+ "<b>"+value+"</b> is <b>"+
+ percentage.toFixed(2)+
+ "%</b> of <b>"+
+ total+
+ "</b>.";
+
+});
+
+
+/* FIND X PERCENT */
+
+document.getElementById("findPercentBtn").addEventListener("click",function(){
+
+ const percent=parseFloat(
+  document.getElementById("findPercentValue").value
+ );
+
+ const number=parseFloat(
+  document.getElementById("findNumberValue").value
+ );
+
+ const result=document.getElementById("findPercentResult");
+
+ if(isNaN(percent)||isNaN(number)){
+
+  result.innerHTML="❌ Please enter valid numbers.";
+  return;
+ }
+
+ const answer=(percent/100)*number;
+
+ result.innerHTML=
+ "<b>"+percent+"%</b> of <b>"+
+ number+
+ "</b> = <b>"+
+ answer.toFixed(2)+
+ "</b>";
+
+});
+
+
+/* ==========================================
+   EMI CALCULATOR
+========================================== */
+
+document.getElementById("emiBtn").addEventListener("click",function(){
+
+ const principal=parseFloat(
+  document.getElementById("loanAmount").value
+ );
+
+ const annualRate=parseFloat(
+  document.getElementById("interestRate").value
+ );
+
+ const years=parseFloat(
+  document.getElementById("loanYears").value
+ );
+
+ const result=document.getElementById("emiResult");
+
+ if(
+  isNaN(principal)||
+  isNaN(annualRate)||
+  isNaN(years)||
+  principal<=0||
+  annualRate<0||
+  years<=0
+ ){
+
+  result.innerHTML="❌ Please enter valid loan details.";
+  return;
+ }
+
+ const months=years*12;
+ const monthlyRate=annualRate/100/12;
+
+ let emi;
+
+ if(monthlyRate===0){
+
+  emi=principal/months;
+
+ }else{
+
+  emi=
+  principal*
+  monthlyRate*
+  Math.pow(1+monthlyRate,months)/
+  (Math.pow(1+monthlyRate,months)-1);
+
+ }
+
+ const totalPayment=emi*months;
+ const totalInterest=totalPayment-principal;
+
+ result.innerHTML=
+ "Monthly EMI: <b>"+emi.toFixed(2)+"</b><br><br>"+
+ "Total Payment: <b>"+totalPayment.toFixed(2)+"</b><br><br>"+
+ "Total Interest: <b>"+totalInterest.toFixed(2)+"</b>";
+
+});
+
+
+/* ==========================================
+   QR CODE
+========================================== */
+
+document.getElementById("qrBtn").addEventListener("click",function(){
+
+ const text=document.getElementById("qrText").value.trim();
+
+ const qrBox=document.getElementById("qrCode");
+
+ const downloadBox=document.getElementById("qrDownload");
+
+ qrBox.innerHTML="";
+ downloadBox.innerHTML="";
+
+ if(!text){
+
+  qrBox.innerHTML=
+  "<p>❌ Please enter text or website link.</p>";
+
+  return;
+ }
+
+ if(typeof QRCode==="undefined"){
+
+  qrBox.innerHTML=
+  "<p>❌ QR library failed to load.</p>";
+
+  return;
+ }
+
+ new QRCode(qrBox,{
+  text:text,
+  width:250,
+  height:250,
+  correctLevel:QRCode.CorrectLevel.H
+ });
+
+ setTimeout(function(){
+
+  const canvas=qrBox.querySelector("canvas");
+
+  const img=qrBox.querySelector("img");
+
+  let dataURL="";
+
+  if(canvas){
+
+   dataURL=canvas.toDataURL("image/png");
+
+  }else if(img){
+
+   dataURL=img.src;
+
+  }
+
+  if(dataURL){
+
+   downloadBox.innerHTML=
+   "<br><a class='download-btn' href='"+
+   dataURL+
+   "' download='qr-code.png'>Download QR Code</a>";
+
+  }
+
+ },500);
+
+});
+
+
+/* ==========================================
+   WORD COUNTER
+========================================== */
+
+document.getElementById("counterText").addEventListener("input",function(){
+
+ const text=this.value;
+
+ const words=
+ text.trim()===""
+ ?0
+ :text.trim().split(/\s+/).length;
+
+ const characters=text.length;
+
+ const noSpaces=text.replace(/\s/g,"").length;
+
+ const lines=
+ text===""
+ ?0
+ :text.split(/\r?\n/).length;
+
+ document.getElementById("wordCount").textContent=
+ words.toLocaleString();
+
+ document.getElementById("charCount").textContent=
+ characters.toLocaleString();
+
+ document.getElementById("charNoSpace").textContent=
+ noSpaces.toLocaleString();
+
+ document.getElementById("lineCount").textContent=
+ lines.toLocaleString();
+
+});
+
+</script>
+
+</body>
+</html>
