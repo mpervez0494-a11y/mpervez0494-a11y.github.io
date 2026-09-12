@@ -240,7 +240,6 @@ footer p{
     onkeyup="searchTools()"
 >
 
-
 <div class="tools-grid" id="toolsGrid">
 
 <button class="tool-btn" data-name="image compressor" onclick="openTool('compressor')">
@@ -320,10 +319,15 @@ Word Counter
 <label>Compression Quality</label>
 
 <select id="quality">
+
 <option value="0.9">High Quality</option>
+
 <option value="0.7" selected>Medium Quality</option>
+
 <option value="0.5">Good Compression</option>
+
 <option value="0.3">Strong Compression</option>
+
 </select>
 
 <button class="action" onclick="compressImage()">Compress Image</button>
@@ -344,13 +348,19 @@ Word Counter
 <div class="two">
 
 <div>
+
 <label>Width</label>
+
 <input type="number" id="resizeWidth" placeholder="Example: 800">
+
 </div>
 
 <div>
+
 <label>Height</label>
+
 <input type="number" id="resizeHeight" placeholder="Example: 600">
+
 </div>
 
 </div>
@@ -435,9 +445,11 @@ Word Counter
 <h2>🔢 Percentage Calculator</h2>
 
 <label>Obtained Marks</label>
+
 <input type="number" id="obtained">
 
 <label>Total Marks</label>
+
 <input type="number" id="total">
 
 <button class="action" onclick="calculatePercentage()">Calculate Percentage</button>
@@ -449,9 +461,11 @@ Word Counter
 <h3>Find X% of a Number</h3>
 
 <label>Percentage</label>
+
 <input type="number" id="percentValue">
 
 <label>Number</label>
+
 <input type="number" id="numberValue">
 
 <button class="action" onclick="findPercent()">Calculate</button>
@@ -468,12 +482,15 @@ Word Counter
 <h2>💰 EMI Calculator</h2>
 
 <label>Loan Amount</label>
+
 <input type="number" id="loan">
 
 <label>Annual Interest Rate (%)</label>
+
 <input type="number" id="interest" step="0.01">
 
 <label>Loan Period (Years)</label>
+
 <input type="number" id="years">
 
 <button class="action" onclick="calculateEMI()">Calculate EMI</button>
@@ -525,8 +542,7 @@ Word Counter
 
 <p><strong>Characters:</strong> <span id="characters">0</span></p>
 
-<p><strong>Characters (without spaces):</strong>
-<span id="charactersNoSpace">0</span></p>
+<p><strong>Characters (without spaces):</strong> <span id="charactersNoSpace">0</span></p>
 
 <p><strong>Lines:</strong> <span id="lines">0</span></p>
 
@@ -542,7 +558,6 @@ Word Counter
 <script src="https://pl31301605.profitableratecpmnetwork.com/5b/37/48/5b37487014b122a4af9c2bbbc1950a2c.js"></script>
 
 </div>
-
 
 </div>
 
@@ -564,6 +579,13 @@ Word Counter
 <script src="https://www.highrevenueformat.com/f1042956e1fb46f2d10f10d892dd4e87/invoke.js"></script>
 
 </div>
+
+
+<!-- Traffic Counter https://counter.gratis BEGINN -->
+
+<a href='https://counter.gratis/?language=en&ID=f0c8ee03' target='_top'><img src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==' id='cg_f0c8ee03' alt='Free Counter' title='Counter Statistics'><noscript><img src='https://besucherzaehler.gratis/counter.php?ID=f0c8ee03&STYLE=183' alt='Free Counter' title='Counter Statistics'></noscript></a><script>(function(i,c){i.src=c+'&LANG='+encodeURIComponent(navigator.language)+'&RES='+screen.width+'x'+screen.height+'&REF='+encodeURIComponent(document.referrer)+'&LOC='+encodeURIComponent(location.href)+'&NAVI='+encodeURIComponent(navigator.userAgent)})(document.getElementById('cg_f0c8ee03'),'https://besucherzaehler.gratis/counter.php?ID=f0c8ee03&STYLE=183')</script>
+
+<!-- Traffic Counter https://counter.gratis ENDE -->
 
 
 <footer>
@@ -595,15 +617,21 @@ Word Counter
 function openTool(id){
 
     document.querySelectorAll('.tool-area').forEach(function(tool){
+
         tool.classList.remove('active');
+
     });
 
     document.getElementById(id).classList.add('active');
 
     document.getElementById(id).scrollIntoView({
+
         behavior:'smooth',
+
         block:'start'
+
     });
+
 }
 
 
@@ -622,9 +650,13 @@ function searchTools(){
             btn.getAttribute('data-name').toLowerCase();
 
         if(name.includes(search)){
+
             btn.style.display='block';
+
         }else{
+
             btn.style.display='none';
+
         }
 
     });
@@ -640,7 +672,9 @@ function compressImage(){
         document.getElementById('compressFile').files[0];
 
     if(!file){
+
         alert('Please select an image.');
+
         return;
     }
 
@@ -710,7 +744,9 @@ function resizeImage(){
         parseInt(document.getElementById('resizeHeight').value);
 
     if(!file || !width || !height){
+
         alert('Please select image and enter width & height.');
+
         return;
     }
 
@@ -764,7 +800,9 @@ function convertJpgPng(){
         document.getElementById('jpgFile').files[0];
 
     if(!file){
+
         alert('Please select JPG image.');
+
         return;
     }
 
@@ -813,7 +851,9 @@ function convertPngJpg(){
         document.getElementById('pngFile').files[0];
 
     if(!file){
+
         alert('Please select PNG image.');
+
         return;
     }
 
@@ -867,7 +907,9 @@ async function convertPdfJpg(){
         document.getElementById('pdfFile').files[0];
 
     if(!file){
+
         alert('Please select a PDF.');
+
         return;
     }
 
@@ -881,7 +923,9 @@ async function convertPdfJpg(){
 
     let pdf =
         await pdfjsLib.getDocument({
+
             data:arrayBuffer
+
         }).promise;
 
     result.innerHTML='';
@@ -907,8 +951,11 @@ async function convertPdfJpg(){
             viewport.height;
 
         await page.render({
+
             canvasContext:context,
+
             viewport:viewport
+
         }).promise;
 
         let url =
@@ -944,12 +991,16 @@ function calculateAge(){
         new Date(document.getElementById('ageDate').value);
 
     if(isNaN(dob) || isNaN(target)){
+
         alert('Please select both dates.');
+
         return;
     }
 
     if(target < dob){
+
         alert('Calculation date cannot be before birth date.');
+
         return;
     }
 
@@ -1011,7 +1062,9 @@ function calculatePercentage(){
         parseFloat(document.getElementById('total').value);
 
     if(!total || obtained<0){
+
         alert('Enter valid marks.');
+
         return;
     }
 
@@ -1030,52 +1083,4 @@ function calculatePercentage(){
 function findPercent(){
 
     let percent =
-        parseFloat(document.getElementById('percentValue').value);
-
-    let number =
-        parseFloat(document.getElementById('numberValue').value);
-
-    if(isNaN(percent)||isNaN(number)){
-        alert('Enter valid numbers.');
-        return;
-    }
-
-    let result =
-        (percent/100)*number;
-
-    document.getElementById('percentResult').innerHTML=
-
-    '<strong>Answer: '+result.toFixed(2)+'</strong>';
-
-}
-
-
-/* EMI */
-
-function calculateEMI(){
-
-    let P =
-        parseFloat(document.getElementById('loan').value);
-
-    let annual =
-        parseFloat(document.getElementById('interest').value);
-
-    let years =
-        parseFloat(document.getElementById('years').value);
-
-    if(!P || !annual || !years){
-        alert('Please enter all values.');
-        return;
-    }
-
-    let r =
-        annual/12/100;
-
-    let n =
-        years*12;
-
-    let emi =
-        P*r*Math.pow(1+r,n)/
-        (Math.pow(1+r,n)-1);
-
-    let totalPayment =
+        parseFloat(document.getElementById('perce
