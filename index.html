@@ -6,14 +6,8 @@
 
 <title>MP Tools - Free Online Tools</title>
 
-<meta name="description" content="MP Tools - Free online image, PDF, calculator, QR code and text tools.">
-<meta name="keywords" content="online tools, image compressor, image resizer, QR generator, age calculator, EMI calculator">
-
-<!-- QR Code Library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-<!-- PDF.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<meta name="description" content="MP Tools is a free online tools website providing image, PDF, calculator, QR code and text tools.">
+<meta name="keywords" content="online tools, image compressor, image resizer, JPG PNG converter, PDF to JPG, age calculator, percentage calculator, EMI calculator, QR code generator, word counter">
 
 <style>
 *{
@@ -58,6 +52,15 @@ header p{
     border-radius:10px;
     margin-bottom:20px;
     font-size:16px;
+}
+
+.ad-box{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:20px auto;
+    overflow:hidden;
 }
 
 .tools-grid{
@@ -160,9 +163,10 @@ textarea{
     display:block;
 }
 
-#qr{
-    margin:20px auto;
-    width:max-content;
+.two{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
 }
 
 footer{
@@ -178,15 +182,9 @@ footer p{
 }
 
 .small{
-    color:#666;
+    color:#aaa;
     font-size:13px;
     margin-top:8px;
-}
-
-.two{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
 }
 
 @media(max-width:600px){
@@ -212,6 +210,26 @@ footer p{
     <p>Free Online Tools - Fast, Simple & Easy</p>
 </header>
 
+
+<!-- AD 1 - 728x90 -->
+
+<div class="ad-box">
+
+<script>
+  atOptions = {
+    'key' : '1cff06815314eb454742a71859e1a9e8',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+
+<script src="https://www.highrevenueformat.com/1cff06815314eb454742a71859e1a9e8/invoke.js"></script>
+
+</div>
+
+
 <div class="container">
 
 <input
@@ -221,6 +239,7 @@ footer p{
     placeholder="🔍 Search a tool..."
     onkeyup="searchTools()"
 >
+
 
 <div class="tools-grid" id="toolsGrid">
 
@@ -273,6 +292,17 @@ QR Code Generator
 <span class="tool-icon">✍️</span>
 Word Counter
 </button>
+
+</div>
+
+
+<!-- AD 2 -->
+
+<div class="ad-box">
+
+<script async="async" data-cfasync="false" src="https://pl31301604.profitableratecpmnetwork.com/7ae34b3ce721af2ebfa993a387e7adf4/invoke.js"></script>
+
+<div id="container-7ae34b3ce721af2ebfa993a387e7adf4"></div>
 
 </div>
 
@@ -504,6 +534,35 @@ Word Counter
 
 </div>
 
+
+<!-- AD 3 -->
+
+<div class="ad-box">
+
+<script src="https://pl31301605.profitableratecpmnetwork.com/5b/37/48/5b37487014b122a4af9c2bbbc1950a2c.js"></script>
+
+</div>
+
+
+</div>
+
+
+<!-- AD 4 - 320x50 -->
+
+<div class="ad-box">
+
+<script>
+  atOptions = {
+    'key' : 'f1042956e1fb46f2d10f10d892dd4e87',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+
+<script src="https://www.highrevenueformat.com/f1042956e1fb46f2d10f10d892dd4e87/invoke.js"></script>
+
 </div>
 
 
@@ -518,6 +577,15 @@ Word Counter
 </p>
 
 </footer>
+
+
+<!-- QR Code Library -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<!-- PDF.js -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
 
 <script>
@@ -1011,114 +1079,3 @@ function calculateEMI(){
         (Math.pow(1+r,n)-1);
 
     let totalPayment =
-        emi*n;
-
-    let totalInterest =
-        totalPayment-P;
-
-    document.getElementById('emiResult').innerHTML=
-
-    '<p><strong>Monthly EMI:</strong> '+
-    emi.toFixed(2)+
-    '</p>' +
-
-    '<p><strong>Total Payment:</strong> '+
-    totalPayment.toFixed(2)+
-    '</p>' +
-
-    '<p><strong>Total Interest:</strong> '+
-    totalInterest.toFixed(2)+
-    '</p>';
-
-}
-
-
-/* QR CODE */
-
-function generateQR(){
-
-    let text =
-        document.getElementById('qrText').value.trim();
-
-    if(!text){
-        alert('Enter text or URL.');
-        return;
-    }
-
-    let qr =
-        document.getElementById('qr');
-
-    qr.innerHTML='';
-
-    new QRCode(qr,{
-        text:text,
-        width:220,
-        height:220
-    });
-
-    document.getElementById('qrDownload')
-    .style.display='inline-block';
-
-}
-
-
-function downloadQR(){
-
-    let img =
-        document.querySelector('#qr img');
-
-    if(!img){
-        alert('Generate QR code first.');
-        return;
-    }
-
-    let link =
-        document.createElement('a');
-
-    link.href=img.src;
-
-    link.download='mp-tools-qr-code.png';
-
-    link.click();
-
-}
-
-
-/* WORD COUNTER */
-
-function countText(){
-
-    let text =
-        document.getElementById('counterText').value;
-
-    let words =
-        text.trim()
-        ? text.trim().split(/\s+/).length
-        : 0;
-
-    let characters =
-        text.length;
-
-    let charactersNoSpace =
-        text.replace(/\s/g,'').length;
-
-    let lines =
-        text
-        ? text.split(/\n/).length
-        : 0;
-
-    document.getElementById('words').textContent=words;
-
-    document.getElementById('characters').textContent=characters;
-
-    document.getElementById('charactersNoSpace').textContent=
-        charactersNoSpace;
-
-    document.getElementById('lines').textContent=lines;
-
-}
-
-</script>
-
-</body>
-</html>
