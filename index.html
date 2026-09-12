@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MP Tools - Free Online Tools</title>
@@ -93,6 +95,101 @@ header p{
     margin-bottom:10px;
 }
 
+.tool-page{
+    display:none;
+}
+
+.tool-page.active{
+    display:block;
+}
+
+.tool-area{
+    background:white;
+    margin-top:20px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+.tool-area h2{
+    margin-bottom:15px;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:12px;
+    margin:8px 0 12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+}
+
+textarea{
+    min-height:180px;
+    resize:vertical;
+}
+
+.action{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    margin:5px 0;
+    font-size:15px;
+}
+
+.action:hover{
+    background:#1d4ed8;
+}
+
+.download{
+    background:#16a34a;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+    margin-top:10px;
+}
+
+.result{
+    background:#f1f5f9;
+    padding:15px;
+    border-radius:10px;
+    margin-top:15px;
+}
+
+.preview{
+    max-width:100%;
+    max-height:350px;
+    margin:15px auto;
+    display:block;
+}
+
+.two{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.back-btn{
+    display:inline-block;
+    background:#111827;
+    color:white;
+    text-decoration:none;
+    padding:11px 18px;
+    border-radius:8px;
+    margin-bottom:15px;
+}
+
+.back-btn:hover{
+    background:#2563eb;
+}
+
 footer{
     margin-top:40px;
     background:#111827;
@@ -111,18 +208,32 @@ footer p{
     margin-top:8px;
 }
 
+#qr{
+    margin-top:20px;
+}
+
 @media(max-width:600px){
 
     header h1{
         font-size:26px;
     }
 
+    .two{
+        grid-template-columns:1fr;
+    }
+
+    .tool-area{
+        padding:18px;
+    }
+
 }
 
 </style>
+
 </head>
 
 <body>
+
 
 <header>
 
@@ -136,7 +247,10 @@ footer p{
 <div class="container">
 
 
-<!-- Search -->
+<!-- ================= HOME PAGE ================= -->
+
+<div id="homePage">
+
 
 <input
     type="text"
@@ -170,7 +284,7 @@ footer p{
 <div class="tools-grid" id="toolsGrid">
 
 
-<a class="tool-btn" href="tool.html?tool=compressor">
+<a class="tool-btn" href="?tool=compressor">
 
 <span class="tool-icon">🖼️</span>
 
@@ -179,7 +293,7 @@ Image Compressor
 </a>
 
 
-<a class="tool-btn" href="tool.html?tool=resizer">
+<a class="tool-btn" href="?tool=resizer">
 
 <span class="tool-icon">📐</span>
 
@@ -188,7 +302,7 @@ Image Resizer
 </a>
 
 
-<a class="tool-btn" href="tool.html?tool=jpgpng">
+<a class="tool-btn" href="?tool=jpgpng">
 
 <span class="tool-icon">🔄</span>
 
@@ -197,7 +311,7 @@ JPG → PNG
 </a>
 
 
-<a class="tool-btn" href="tool.html?tool=pngjpg">
+<a class="tool-btn" href="?tool=pngjpg">
 
 <span class="tool-icon">🔄</span>
 
@@ -206,7 +320,7 @@ PNG → JPG
 </a>
 
 
-<a class="tool-btn" href="tool.html?tool=pdfjpg">
+<a class="tool-btn" href="?tool=pdfjpg">
 
 <span class="tool-icon">📄</span>
 
@@ -215,7 +329,7 @@ PDF → JPG
 </a>
 
 
-<a class="tool-btn" href="tool.html?tool=age">
+<a class="tool-btn" href="?tool=age">
 
 <span class="tool-icon">🎂</span>
 
@@ -224,7 +338,7 @@ Age Calculator
 </a>
 
 
-<a class="tool-btn" href="tool.html?tool=percentage">
+<a class="tool-btn" href="?tool=percentage">
 
 <span class="tool-icon">🔢</span>
 
@@ -233,7 +347,7 @@ Percentage Calculator
 </a>
 
 
-<a class="tool-btn" href="tool.html?tool=emi">
+<a class="tool-btn" href="?tool=emi">
 
 <span class="tool-icon">💰</span>
 
@@ -242,7 +356,7 @@ EMI Calculator
 </a>
 
 
-<a class="tool-btn" href="tool.html?tool=qrtool">
+<a class="tool-btn" href="?tool=qrtool">
 
 <span class="tool-icon">📱</span>
 
@@ -251,7 +365,7 @@ QR Code Generator
 </a>
 
 
-<a class="tool-btn" href="tool.html?tool=counter">
+<a class="tool-btn" href="?tool=counter">
 
 <span class="tool-icon">✍️</span>
 
@@ -310,6 +424,412 @@ Word & Character Counter
 </div>
 
 
+<!-- ================= TOOL PAGE ================= -->
+
+<div id="toolPage" class="tool-page">
+
+
+<a href="index.html" class="back-btn">
+
+← Back to MP Tools
+
+</a>
+
+
+<!-- IMAGE COMPRESSOR -->
+
+<div id="compressor" class="tool-area">
+
+<h2>🖼️ Image Compressor</h2>
+
+<p>Select an image and choose the quality.</p>
+
+<input
+    type="file"
+    id="compressFile"
+    accept="image/*">
+
+<label>Compression Quality</label>
+
+<select id="quality">
+
+<option value="0.9">
+High Quality
+</option>
+
+<option value="0.7" selected>
+Medium Quality
+</option>
+
+<option value="0.5">
+Good Compression
+</option>
+
+<option value="0.3">
+Strong Compression
+</option>
+
+</select>
+
+<button
+    class="action"
+    onclick="compressImage()">
+
+Compress Image
+
+</button>
+
+<div id="compressResult"></div>
+
+</div>
+
+
+<!-- IMAGE RESIZER -->
+
+<div id="resizer" class="tool-area">
+
+<h2>📐 Image Resizer</h2>
+
+<input
+    type="file"
+    id="resizeFile"
+    accept="image/*">
+
+<div class="two">
+
+<div>
+
+<label>Width</label>
+
+<input
+    type="number"
+    id="resizeWidth"
+    placeholder="Example: 800">
+
+</div>
+
+<div>
+
+<label>Height</label>
+
+<input
+    type="number"
+    id="resizeHeight"
+    placeholder="Example: 600">
+
+</div>
+
+</div>
+
+<button
+    class="action"
+    onclick="resizeImage()">
+
+Resize Image
+
+</button>
+
+<div id="resizeResult"></div>
+
+</div>
+
+
+<!-- JPG TO PNG -->
+
+<div id="jpgpng" class="tool-area">
+
+<h2>🔄 JPG → PNG Converter</h2>
+
+<input
+    type="file"
+    id="jpgFile"
+    accept="image/jpeg,image/jpg">
+
+<button
+    class="action"
+    onclick="convertJpgPng()">
+
+Convert to PNG
+
+</button>
+
+<div id="jpgResult"></div>
+
+</div>
+
+
+<!-- PNG TO JPG -->
+
+<div id="pngjpg" class="tool-area">
+
+<h2>🔄 PNG → JPG Converter</h2>
+
+<input
+    type="file"
+    id="pngFile"
+    accept="image/png">
+
+<button
+    class="action"
+    onclick="convertPngJpg()">
+
+Convert to JPG
+
+</button>
+
+<div id="pngResult"></div>
+
+</div>
+
+
+<!-- PDF TO JPG -->
+
+<div id="pdfjpg" class="tool-area">
+
+<h2>📄 PDF → JPG Converter</h2>
+
+<input
+    type="file"
+    id="pdfFile"
+    accept="application/pdf">
+
+<button
+    class="action"
+    onclick="convertPdfJpg()">
+
+Convert PDF Pages
+
+</button>
+
+<div id="pdfResult"></div>
+
+</div>
+
+
+<!-- AGE CALCULATOR -->
+
+<div id="age" class="tool-area">
+
+<h2>🎂 Age Calculator</h2>
+
+<label>Date of Birth</label>
+
+<input
+    type="date"
+    id="dob">
+
+<label>Calculate Age On</label>
+
+<input
+    type="date"
+    id="ageDate">
+
+<button
+    class="action"
+    onclick="calculateAge()">
+
+Calculate Age
+
+</button>
+
+<div
+    id="ageResult"
+    class="result">
+
+</div>
+
+</div>
+
+
+<!-- PERCENTAGE CALCULATOR -->
+
+<div id="percentage" class="tool-area">
+
+<h2>🔢 Percentage Calculator</h2>
+
+<label>Obtained Marks</label>
+
+<input
+    type="number"
+    id="obtained">
+
+<label>Total Marks</label>
+
+<input
+    type="number"
+    id="total">
+
+<button
+    class="action"
+    onclick="calculatePercentage()">
+
+Calculate Percentage
+
+</button>
+
+<div
+    id="percentageResult"
+    class="result">
+
+</div>
+
+
+<hr style="margin:25px 0">
+
+
+<h3>Find X% of a Number</h3>
+
+<label>Percentage</label>
+
+<input
+    type="number"
+    id="percentValue">
+
+<label>Number</label>
+
+<input
+    type="number"
+    id="numberValue">
+
+<button
+    class="action"
+    onclick="findPercent()">
+
+Calculate
+
+</button>
+
+<div
+    id="percentResult"
+    class="result">
+
+</div>
+
+</div>
+
+
+<!-- EMI CALCULATOR -->
+
+<div id="emi" class="tool-area">
+
+<h2>💰 EMI Calculator</h2>
+
+<label>Loan Amount</label>
+
+<input
+    type="number"
+    id="loan">
+
+<label>Annual Interest Rate (%)</label>
+
+<input
+    type="number"
+    id="interest"
+    step="0.01">
+
+<label>Loan Period (Years)</label>
+
+<input
+    type="number"
+    id="years">
+
+<button
+    class="action"
+    onclick="calculateEMI()">
+
+Calculate EMI
+
+</button>
+
+<div
+    id="emiResult"
+    class="result">
+
+</div>
+
+</div>
+
+
+<!-- QR CODE -->
+
+<div id="qrtool" class="tool-area">
+
+<h2>📱 QR Code Generator</h2>
+
+<label>Enter Text or URL</label>
+
+<input
+    type="text"
+    id="qrText"
+    placeholder="https://example.com">
+
+<button
+    class="action"
+    onclick="generateQR()">
+
+Generate QR Code
+
+</button>
+
+<div id="qr"></div>
+
+<button
+    class="download"
+    id="qrDownload"
+    style="display:none"
+    onclick="downloadQR()">
+
+Download QR Code
+
+</button>
+
+</div>
+
+
+<!-- WORD COUNTER -->
+
+<div id="counter" class="tool-area">
+
+<h2>✍️ Word & Character Counter</h2>
+
+<textarea
+    id="counterText"
+    placeholder="Type or paste your text here..."
+    oninput="countText()"></textarea>
+
+<div class="result">
+
+<p>
+<strong>Words:</strong>
+<span id="words">0</span>
+</p>
+
+<p>
+<strong>Characters:</strong>
+<span id="characters">0</span>
+</p>
+
+<p>
+<strong>Characters (without spaces):</strong>
+<span id="charactersNoSpace">0</span>
+</p>
+
+<p>
+<strong>Lines:</strong>
+<span id="lines">0</span>
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
 <footer>
 
 <p><strong>MP Tools</strong></p>
@@ -317,31 +837,149 @@ Word & Character Counter
 <p>Free Online Tools for Everyone</p>
 
 <p class="small">
+
 © 2026 MP Tools. All Rights Reserved.
+
 </p>
 
 </footer>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+
 <script>
+
+
+/* ================= PAGE SYSTEM ================= */
+
+function openSelectedTool(){
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+    const tool =
+        params.get('tool');
+
+
+    const home =
+        document.getElementById(
+            'homePage'
+        );
+
+    const toolPage =
+        document.getElementById(
+            'toolPage'
+        );
+
+
+    const toolNames = [
+
+        'compressor',
+        'resizer',
+        'jpgpng',
+        'pngjpg',
+        'pdfjpg',
+        'age',
+        'percentage',
+        'emi',
+        'qrtool',
+        'counter'
+
+    ];
+
+
+    if(!tool || !toolNames.includes(tool)){
+
+        home.style.display='block';
+
+        toolPage.classList.remove('active');
+
+        document.title =
+            'MP Tools - Free Online Tools';
+
+        return;
+
+    }
+
+
+    home.style.display='none';
+
+    toolPage.classList.add('active');
+
+
+    document.querySelectorAll(
+        '#toolPage .tool-area'
+    ).forEach(function(area){
+
+        area.style.display='none';
+
+    });
+
+
+    const selected =
+        document.getElementById(tool);
+
+
+    if(selected){
+
+        selected.style.display='block';
+
+        const heading =
+            selected.querySelector('h2');
+
+        if(heading){
+
+            document.title =
+                heading.innerText
+                + ' - MP Tools';
+
+        }
+
+    }
+
+}
+
+
+/* Run when page opens */
+
+openSelectedTool();
+
+
+/* ================= SEARCH ================= */
 
 function searchTools(){
 
-    let input = document.getElementById('search').value.toLowerCase();
+    let input =
+        document
+        .getElementById('search')
+        .value
+        .toLowerCase();
 
-    let tools = document.querySelectorAll('.tool-btn');
+
+    let tools =
+        document.querySelectorAll(
+            '.tool-btn'
+        );
+
 
     tools.forEach(function(tool){
 
-        let text = tool.innerText.toLowerCase();
+        let text =
+            tool.innerText.toLowerCase();
+
 
         if(text.includes(input)){
 
-            tool.style.display = 'block';
+            tool.style.display='block';
 
         }else{
 
-            tool.style.display = 'none';
+            tool.style.display='none';
 
         }
 
@@ -349,7 +987,387 @@ function searchTools(){
 
 }
 
-</script>
 
-</body>
-</html>
+/* ================= IMAGE COMPRESSOR ================= */
+
+function compressImage(){
+
+    let file =
+        document
+        .getElementById('compressFile')
+        .files[0];
+
+
+    if(!file){
+
+        alert('Please select an image.');
+
+        return;
+
+    }
+
+
+    let quality =
+        parseFloat(
+            document
+            .getElementById('quality')
+            .value
+        );
+
+
+    let reader =
+        new FileReader();
+
+
+    reader.onload=function(e){
+
+        let img =
+            new Image();
+
+
+        img.onload=function(){
+
+            let canvas =
+                document.createElement(
+                    'canvas'
+                );
+
+
+            canvas.width =
+                img.width;
+
+            canvas.height =
+                img.height;
+
+
+            let ctx =
+                canvas.getContext(
+                    '2d'
+                );
+
+
+            ctx.drawImage(
+                img,
+                0,
+                0
+            );
+
+
+            canvas.toBlob(
+                function(blob){
+
+                    let url =
+                        URL.createObjectURL(
+                            blob
+                        );
+
+
+                    document
+                    .getElementById(
+                        'compressResult'
+                    )
+                    .innerHTML=
+
+                    '<p>Original Size: '
+                    +(file.size/1024).toFixed(2)
+                    +' KB</p>'+
+
+                    '<p>Compressed Size: '
+                    +(blob.size/1024).toFixed(2)
+                    +' KB</p>'+
+
+                    '<a class="download" download="compressed-image.jpg" href="'
+                    +url
+                    +'">Download Compressed Image</a>';
+
+                },
+                'image/jpeg',
+                quality
+            );
+
+        };
+
+
+        img.src =
+            e.target.result;
+
+    };
+
+
+    reader.readAsDataURL(file);
+
+}
+
+
+/* ================= IMAGE RESIZER ================= */
+
+function resizeImage(){
+
+    let file =
+        document
+        .getElementById('resizeFile')
+        .files[0];
+
+
+    let width =
+        parseInt(
+            document
+            .getElementById('resizeWidth')
+            .value
+        );
+
+
+    let height =
+        parseInt(
+            document
+            .getElementById('resizeHeight')
+            .value
+        );
+
+
+    if(
+        !file ||
+        !width ||
+        !height
+    ){
+
+        alert(
+            'Please select image and enter width & height.'
+        );
+
+        return;
+
+    }
+
+
+    let reader =
+        new FileReader();
+
+
+    reader.onload=function(e){
+
+        let img =
+            new Image();
+
+
+        img.onload=function(){
+
+            let canvas =
+                document.createElement(
+                    'canvas'
+                );
+
+
+            canvas.width =
+                width;
+
+            canvas.height =
+                height;
+
+
+            let ctx =
+                canvas.getContext(
+                    '2d'
+                );
+
+
+            ctx.drawImage(
+                img,
+                0,
+                0,
+                width,
+                height
+            );
+
+
+            canvas.toBlob(
+                function(blob){
+
+                    let url =
+                        URL.createObjectURL(
+                            blob
+                        );
+
+
+                    document
+                    .getElementById(
+                        'resizeResult'
+                    )
+                    .innerHTML=
+
+                    '<img class="preview" src="'
+                    +url
+                    +'">'+
+
+                    '<a class="download" download="resized-image.jpg" href="'
+                    +url
+                    +'">Download Resized Image</a>';
+
+                },
+                'image/jpeg',
+                .9
+            );
+
+        };
+
+
+        img.src =
+            e.target.result;
+
+    };
+
+
+    reader.readAsDataURL(file);
+
+}
+
+
+/* ================= JPG TO PNG ================= */
+
+function convertJpgPng(){
+
+    let file =
+        document
+        .getElementById('jpgFile')
+        .files[0];
+
+
+    if(!file){
+
+        alert(
+            'Please select JPG image.'
+        );
+
+        return;
+
+    }
+
+
+    let reader =
+        new FileReader();
+
+
+    reader.onload=function(e){
+
+        let img =
+            new Image();
+
+
+        img.onload=function(){
+
+            let canvas =
+                document.createElement(
+                    'canvas'
+                );
+
+
+            canvas.width =
+                img.width;
+
+            canvas.height =
+                img.height;
+
+
+            canvas
+            .getContext('2d')
+            .drawImage(
+                img,
+                0,
+                0
+            );
+
+
+            let url =
+                canvas.toDataURL(
+                    'image/png'
+                );
+
+
+            document
+            .getElementById(
+                'jpgResult'
+            )
+            .innerHTML=
+
+            '<img class="preview" src="'
+            +url
+            +'">'+
+
+            '<a class="download" download="converted.png" href="'
+            +url
+            +'">Download PNG</a>';
+
+        };
+
+
+        img.src =
+            e.target.result;
+
+    };
+
+
+    reader.readAsDataURL(file);
+
+}
+
+
+/* ================= PNG TO JPG ================= */
+
+function convertPngJpg(){
+
+    let file =
+        document
+        .getElementById('pngFile')
+        .files[0];
+
+
+    if(!file){
+
+        alert(
+            'Please select PNG image.'
+        );
+
+        return;
+
+    }
+
+
+    let reader =
+        new FileReader();
+
+
+    reader.onload=function(e){
+
+        let img =
+            new Image();
+
+
+        img.onload=function(){
+
+            let canvas =
+                document.createElement(
+                    'canvas'
+                );
+
+
+            canvas.width =
+                img.width;
+
+            canvas.height =
+                img.height;
+
+
+            let ctx =
+                canvas.getContext(
+                    '2d'
+                );
+
+
+            ctx.fillStyle =
+                'white';
+
+
+            ctx.fillRect(
+                0,
+                0,
+    
